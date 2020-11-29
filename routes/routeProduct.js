@@ -103,7 +103,7 @@ module.exports = {
             });
 
             if (created) {
-                res.status(200)
+                res.status(201)
                     .json({
                         status: "success",
                         data: data

@@ -226,8 +226,213 @@ A api inicia pelo arquivo start.js, na url base: http://localhost:8080
             {
                 "id": "id da categoria",
                 "name": "nome da categoria"
+            },
+            {
+                "...": "..."
             }
-            //...
+            
+        ]
+      }
+    ```
+
+
+**Cadastrar Produto**
+----
+  Cadastra um produto
+
+* **URL**
+
+  /api/product
+
+* **Method:**
+  
+  `POST` 
+
+* **Data Params**
+
+  ```json
+    {
+        "categoryId": "id do produto",
+        "name": "nome do produto",
+        "manufacturingDate": "Data de fabricação do produto (Formato: 2020-07-17T12:55:33.000Z)",
+        "perishableProduct": "True ou false, marcando se o produto é perecível",
+        "expirationDate": "Data de validade do produto (Formato: 2020-07-17T12:55:33.000Z)",
+        "price": "Preço do produto"
+    }
+  ```
+
+* **Success Response:**
+  
+  * **Code:** 201 <br />
+    **Content:** 
+    ```json
+      {
+        "status": "success",
+        "data": {
+            "categoryId": "id do produto",
+            "name": "nome do produto",
+            "manufacturingDate": "Data de fabricação do produto (Formato: 2020-07-17T12:55:33.000Z)",
+            "perishableProduct": "True ou false, marcando se o produto é perecível",
+            "expirationDate": "Data de validade do produto (Formato: 2020-07-17T12:55:33.000Z)",
+            "price": "Preço do produto"
+        }
+      }
+    ```
+
+**Atualizar Produto**
+----
+  Atualiza um produto
+
+* **URL**
+
+  /api/product/:id
+
+* **Method:**
+  
+  `PUT` 
+
+* **Data Params**
+    Os paramêtros que não deseja alterar podem ser especifícados ou não
+  ```json
+    {
+        "categoryId": "id do produto",
+        "name": "nome do produto",
+        "manufacturingDate": "Data de fabricação do produto (Formato: 2020-07-17T12:55:33.000Z)",
+        "perishableProduct": "True ou false, marcando se o produto é perecível",
+        "expirationDate": "Data de validade do produto (Formato: 2020-07-17T12:55:33.000Z)",
+        "price": "Preço do produto"
+    }
+  ```
+
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+      {
+        "status": "success",
+        "data": {
+            "categoryId": "id do produto",
+            "name": "nome do produto",
+            "manufacturingDate": "Data de fabricação do produto (Formato: 2020-07-17T12:55:33.000Z)",
+            "perishableProduct": "True ou false, marcando se o produto é perecível",
+            "expirationDate": "Data de validade do produto (Formato: 2020-07-17T12:55:33.000Z)",
+            "price": "Preço do produto"
+        }
+      }
+    ```
+
+**Deletar Produto**
+----
+  Deleta um produto
+
+* **URL**
+
+  /api/product/:id
+
+* **Method:**
+  
+  `DELETE` 
+
+* **Data Params**
+
+  `none`
+
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+      {
+        "status": "success",
+        "message": "Produto removido"
+      }
+    ```
+
+**Exibir Produto**
+----
+  Exibe dados de um produto
+
+* **URL**
+
+  /api/product/:id
+
+* **Method:**
+  
+  `GET` 
+
+* **Data Params**
+
+  `none`
+
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+      {
+        "status": "success",
+        "data": {
+            "categoryId": "id do produto",
+            "name": "nome do produto",
+            "manufacturingDate": "Data de fabricação do produto (Formato: 2020-07-17T12:55:33.000Z)",
+            "perishableProduct": "True ou false, marcando se o produto é perecível",
+            "expirationDate": "Data de validade do produto (Formato: 2020-07-17T12:55:33.000Z)",
+            "price": "Preço do produto"
+        }
+      }
+    ```
+
+**Listar Produtos**
+----
+  Lista todos os produtos, com paginação de 10 produtos por página, podendo ser ordenado
+
+* **URL**
+
+  /api/product
+
+* **Method:**
+  
+  `GET` 
+
+*  **URL Params**
+
+   **Optional:**
+ 
+   `field=[Nome do campo a ser ordenado]`
+   `order=[ASC ou DESC]`
+
+* **Data Params**
+
+  `none`
+
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+      {
+        "status": "success",
+        "data": [
+            {
+                "categoryId": "id do produto",
+                "name": "nome do produto",
+                "manufacturingDate": "Data de fabricação do produto (Formato: 2020-07-17T12:55:33.000Z)",
+                "perishableProduct": "True ou false, marcando se o produto é perecível",
+                "expirationDate": "Data de validade do produto (Formato: 2020-07-17T12:55:33.000Z)",
+                "price": "Preço do produto"
+            },
+            {
+                "categoryId": "id do produto",
+                "name": "nome do produto",
+                "manufacturingDate": "Data de fabricação do produto (Formato: 2020-07-17T12:55:33.000Z)",
+                "perishableProduct": "True ou false, marcando se o produto é perecível",
+                "expirationDate": "Data de validade do produto (Formato: 2020-07-17T12:55:33.000Z)",
+                "price": "Preço do produto"
+            },
+            {
+                "...": "..."
+            }
         ]
       }
     ```
