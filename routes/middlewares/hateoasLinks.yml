@@ -1,0 +1,56 @@
+/api/category:
+  POST:
+    - rel: update_category
+      method: PUT
+      href: /api/category/:1
+    - rel: delete_category
+      method: DELETE
+      href: /api/category/:1
+  GET:
+    - rel: update_category
+      method: PUT
+      href: /api/category/id
+    - rel: delete_category
+      method: DELETE
+      href: /api/category/id
+/api/category/:number:
+  GET:
+    - rel: update_category
+      method: PUT
+      href: /api/category/:1
+    - rel: delete_category
+      method: DELETE
+      href: /api/category/:1
+  PUT:
+    - rel: delete_category
+      method: DELETE
+      href: /api/category/:1
+
+/api/product:
+  POST:
+    - rel: update_product
+      method: PUT
+      href: /api/product/:1
+    - rel: delete_product
+      method: DELETE
+      href: /api/product/:1
+  GET:
+    - rel: update_product
+      method: PUT
+      href: /api/product/id
+    - rel: delete_product
+      method: DELETE
+      href: /api/product/id
+/api/product/:number:
+  GET:
+    - rel: update_product
+      method: PUT
+      href: /api/product/:1
+    - rel: delete_product
+      method: DELETE
+      href: /api/product/:1
+  PUT:
+    - rel: delete_product
+      method: DELETE
+      href: /api/product/:1
+      
