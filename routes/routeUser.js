@@ -40,7 +40,7 @@ module.exports = {
         var passwordHash = bcrypt.hashSync(password, 10);
 
         if (emailValidator.validate(email)) {
-            const { data, created } = await user.findOrCreate({
+            const [ data, created ] = await user.findOrCreate({
                 where: {
                     [Op.or]: [
                         { username: username },
@@ -134,7 +134,7 @@ module.exports = {
                     } else {
                         res.status(200)
                             .json({
-                                satus: "success",
+                                status: "success",
                                 token: token
                             });
                     }

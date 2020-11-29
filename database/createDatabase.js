@@ -17,22 +17,24 @@ mysqlConn.connect(function(err){
         console.log('MySQL error: ' + err);
         return;
     } 
-
-    console.log('MySQL connected');
-
+    
     mysqlConn.query('CREATE DATABASE ' + databaseName, function(error){
 
         const connection = new sequelize(databaseName, username, password, {
             host: host,
             dialect: 'mysql',
-            timezone: '-03:00'
+            timezone: '-03:00',
+            logging: false
         })
 
+        module.exports.mysql = mysqlConn;
         module.exports.connection = connection;
         module.exports.user = require('./User')(connection);
         module.exports.category = require('./Category')(connection);
         module.exports.product = require('./Product')(connection);  
     });
 });
+
+mysqlConn.end();
 
 
