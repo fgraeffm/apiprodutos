@@ -400,6 +400,7 @@ A api inicia pelo arquivo start.js, na url base: http://localhost:8080
    **Optional:**
  
    `field=[Nome do campo a ser ordenado]`
+   
    `order=[ASC ou DESC]`
 
 * **Data Params**
